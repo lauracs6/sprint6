@@ -17,16 +17,16 @@ public class Main {
 
         boolean error = false;
 
-
+        int id=0;
         System.out.println("Introduce tu ID: ");
-        int id = teclado.nextInt();
+        id = teclado.nextInt();
         if (id < minId || id > maxId) {
             error = true;
             mensajeError();
         }
 
 
-        int edad = 0;
+        int edad=0;
         if (!error) {
             System.out.println("Introduce tu edad: ");
             edad = teclado.nextInt();
@@ -37,7 +37,7 @@ public class Main {
         }
 
 
-        int tipoVenta = 0;
+        int tipoVenta =0;
         if (!error) {
             System.out.println("Introduce el código del tipo de venta (venta libre: 0; pensionista: 1; carnet joven: 2; socio: 3): ");
             tipoVenta = teclado.nextInt();
@@ -48,7 +48,7 @@ public class Main {
         }
 
 
-        int importeCompra = 0;
+        int importeCompra=0;
         if (!error) {
             System.out.println("Introduce el importe de compra: ");
             importeCompra = teclado.nextInt();
@@ -59,7 +59,7 @@ public class Main {
         }
 
 
-        int telefono = 0;
+        int telefono=0;
         if (!error) {
             System.out.println("Introduce un teléfono de contacto: ");
             telefono = teclado.nextInt();
@@ -81,14 +81,12 @@ public class Main {
 
             System.out.println("Los datos introducidos son válidos.");
 
-            System.out.println("ID " + id + ", edad " + edad + ", tipo de venta " +tipoVentaTexto + ", importe de compra " + importeCompra +" €" + ", teléfono de contacto: " + telefono);
-
+            System.out.printf("%-10s%-10s%-15s%-20s%-15s%n", "ID", "edad", "tipo de venta", "importe de compra", "teléfono");
+            System.out.printf("%-10d%-10d%-15s%-20d%-15d%n", id, edad, tipoVentaTexto, importeCompra, telefono);
         }
-
-
     }
 
     private static void mensajeError() {
-        System.out.println("Datos inválidos. Por favor, verifica tus datos.");
+        System.out.println("Datos introducidos inválidos. Por favor, verifica la información.");
     }
 }
